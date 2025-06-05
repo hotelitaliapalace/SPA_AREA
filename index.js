@@ -183,13 +183,13 @@
   }
 
   function switchScene(scene) {
-    stopAutorotate();
-    scene.view.setParameters(scene.data.initialViewParameters);
-    scene.scene.switchTo();
-    startAutorotate();
-    updateSceneName(scene);
-    updateSceneList(scene);
-  }
+  stopAutorotate();
+  scene.view.setParameters(scene.data.initialViewParameters);
+  fadeTransition(1000, scene); // transizione fade di 1 secondo
+  startAutorotate();
+  updateSceneName(scene);
+  updateSceneList(scene);
+}
 
   function updateSceneName(scene) {
     sceneNameElement.innerHTML = sanitize(scene.data.name);
